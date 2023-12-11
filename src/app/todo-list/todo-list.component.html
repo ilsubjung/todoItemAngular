@@ -1,0 +1,15 @@
+<h2> Todo Item List </h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let todoitem of todoitems">
+      <td>{{todoitem.name}}</td>
+      <td>{{todoitem.status}}</td>
+    </tr>
+  </tbody>
+</table>
