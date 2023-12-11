@@ -22,4 +22,19 @@ export class TodoService {
     return this.httpClient.post(`${url}`, todoItem);
     console.log("after post");
   }
+
+  getTodoItemById(id : number): Observable<TodoItem> {
+    let url = this.baseUrl + "/todoItem";
+    return this.httpClient.get<TodoItem>(`${url}/${id}`);
+  }
+
+  updateTodoItem(id: number, todoItem: TodoItem): Observable<Object>{
+    let url = this.baseUrl + "/todoItem";
+    return this.httpClient.put(`${url}/${id}`,todoItem);
+  }
+
+  deleteTodoItem(id: number): Observable<Object> {
+    let url = this.baseUrl + "/todoItem";
+    return this.httpClient.delete(`${url}/${id}`);
+  }
 }

@@ -21,16 +21,9 @@ export class CreateTodoitemComponent implements OnInit{
 
   saveTodoItem() {
     this.todoService.createTodoItem(this.todoItem)
-    .subscribe( {
-      next: (data) => {
-        console.log("data="+data);
-      },
-      error: (e) => console.log(e),
-      complete: () => {
-        console.log("complete");
-        this.gotoTodoList();
-      }
-    });
+    .subscribe( 
+      data => this.gotoTodoList()
+    );
   }
 
   gotoTodoList() {
